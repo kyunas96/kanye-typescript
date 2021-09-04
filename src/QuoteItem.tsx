@@ -5,7 +5,7 @@ const QuoteItem = ({ text, timestamp }: Quote): JSX.Element => {
   return (
     <li>
       <span>{text}</span>
-      <span>{timestamp?.toDateString()}</span>
+      <span> {timestamp?.toDateString()}</span>
     </li>
   )
 }
