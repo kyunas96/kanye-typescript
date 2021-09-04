@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import QuoteWrapper from './Quote';
-import Quote from './QuoteInt';
+import Quote from './Interfaces/Quote';
+import QuoteItem from './QuoteItem';
+import Button from './Components/button';
 
 /*
   list must grab 
 */
 
 const QuoteList: React.FC = () => {
-  let [quote, setQuote] = useState<Quote>();
+  let [quote, setQuote] = useState<Quote>({
+    text: "Kanye",
+    timestamp: new Date()
+  });
   let [initialRender, setInitialRender] = useState<boolean>(true);
 
 
@@ -40,8 +44,9 @@ const QuoteList: React.FC = () => {
 
   return (
     <div>
+      <Button action={getQuote}/>
       <ul>
-        
+        <QuoteItem text={quote.text} timestamp={quote.timestamp}/>
       </ul>
     </div>
   )
