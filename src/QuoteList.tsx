@@ -9,10 +9,7 @@ import Button from './Components/button';
 */
 
 const QuoteList: React.FC = () => {
-  let [quote, setQuote] = useState<Quote>({
-    text: "Kanye",
-    timestamp: new Date()
-  });
+  let [quotes, setQuotes] = useState<Quote[]>([]);
   let [initialRender, setInitialRender] = useState<boolean>(true);
 
 
@@ -34,19 +31,23 @@ const QuoteList: React.FC = () => {
       text: response.data.quote,
       timestamp: new Date()
     }
-    setQuote(newQuote);
+    addQuote(newQuote);
     return newQuote;
   }
 
   const addQuote = (quote: Quote): void => {
-    setQuote(quote)
+    setQuotes(oldQuotes => [...oldQuotes, quote])
   }
+
+  const renderQuotes = (quotes: Array<Quote>) => (
+    quotes.map(quote => <QuoteItem text={quote.text} timestamp={quote.timestamp} />)
+  )
 
   return (
     <div>
-      <Button action={getQuote}/>
+      <Button action={getQuote} />
       <ul>
-        <QuoteItem text={quote.text} timestamp={quote.timestamp}/>
+        {renderQuotes(quotes)}
       </ul>
     </div>
   )
