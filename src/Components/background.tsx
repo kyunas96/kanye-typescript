@@ -6,12 +6,13 @@ import "./background.css";
 // 
 
 interface BackgroundProps {
-  children: ReactNode
+  children?: ReactNode
 }
 
 const Background = (props: BackgroundProps) => (
   <div className="background">
-    <img src={Gap} />;
+    <img src={Gap} />
+    {props.children}
   </div>
 );
 
