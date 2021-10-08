@@ -1,12 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
-import QuoteList from './QuoteList';
+import Background from './Components/background';
+import Kanye from './Components/kanye';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <QuoteList />
+      <Background>
+        <Kanye/>
+      </Background>
     </div>
   );
 }
