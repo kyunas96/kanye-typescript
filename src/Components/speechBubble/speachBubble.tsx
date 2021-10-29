@@ -1,13 +1,12 @@
 import React from 'react';
 import './speechBubble.css';
-import Bubble from './Untitled.svg';
+import Bubble from './bubble.svg';
 
 
-const SpeechBubble = () => (
+const SpeechBubble = ({quote} : {quote: string}) => (
   <div className="speech-bubble">
-      {/* speech bubble background*/}
-      <img src={Bubble}></img>
-      <div>I'm gunna save this place.</div>
+    <img src={Bubble} alt=""></img>
+    <div>{quote}</div>
   </div>
 )
 

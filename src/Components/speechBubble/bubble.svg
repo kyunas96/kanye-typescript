@@ -1,47 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
-   version="1.1"
-   id="svg5"
-   inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
-   sodipodi:docname="bubble.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview7"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
-     showgrid="false"
-     inkscape:zoom="1.1174641"
-     inkscape:cx="480.99981"
-     inkscape:cy="243.40828"
-     inkscape:window-width="1440"
-     inkscape:window-height="900"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="layer1" />
-  <defs
-     id="defs2" />
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1">
-    <path
-       id="path1535"
-       style="fill:#fffff;stroke:#000000;stroke-width:2.64583"
-       d="m 159.15789,72.473686 c 0,18.574209 -26.19133,33.631584 -58.49999,33.631584 -10.370673,0 -20.111062,-1.55141 -28.557271,-4.27254 -4.307717,-1.38783 -23.551132,15.22521 -27.097494,13.27948 -3.523058,-1.93295 8.645373,-22.421347 6.046968,-24.805273 -5.634628,-5.169533 -8.892202,-11.282687 -8.892201,-17.833251 4e-6,-18.574209 26.191342,-33.631581 58.499998,-33.63158 32.30865,2e-6 58.49999,15.057373 58.49999,33.63158 z"
-       sodipodi:nodetypes="ssssssss" />
-  </g>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 551 411" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-56.4748,-129.686)">
+        <g transform="matrix(0.986626,0,0,0.976882,1.22265,-8.26007)">
+            <path d="M334.94,146.542C485.977,146.542 608.6,223.188 608.6,317.595C608.6,412.003 485.977,488.649 334.94,488.649C299.39,488.649 265.414,484.403 234.241,476.678C204.957,469.422 95.32,553.785 81.613,556.008C94.612,527.944 124.626,427.79 112.288,417.019C80.184,388.992 61.28,354.663 61.28,317.595C61.28,223.188 183.903,146.542 334.94,146.542Z" style="fill:white;stroke:black;stroke-width:10.61px;" />
+        </g>
+    </g>
 </svg>
