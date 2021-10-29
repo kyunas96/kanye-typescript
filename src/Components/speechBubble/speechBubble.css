@@ -1,0 +1,22 @@
+.speech-bubble{
+  width: 350px;
+  height: 400px;
+  position: absolute;
+  top: 12.5%;
+  left: 15%;
+  z-index: 5;
+}
+
+.speech-bubble div{
+  position: absolute;
+  top: 30%;
+  left: 15%;
+  width: 250px;
+  height: 125px;
+}
+
+.speech-bubble img{
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
