@@ -11,6 +11,10 @@ doin while Yeezy speaks`;
 function App() {
   const [quote, setQuote] = useState<string>("I'm gunna save this place");
 
+  const fetchQuote = () => {
+    
+  }
+
   return (
     <div className="App">
       <Background />
