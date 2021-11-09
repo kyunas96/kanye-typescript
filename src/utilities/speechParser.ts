@@ -1,33 +1,24 @@
 import Quote from '../Interfaces/Quote';
 
 
-enum MouthVowels{
-  A = "A",
-  E = "E",
-  I = "I",
-  O = "O",
-  U = "U"
-}
-
-function speechParser(quote: String){
+function wordParser(quote: String){
   const split = quote.toLowerCase().split("");
   const wordVowels: [string[]] = [[]];
 
-  for(let i = 0; i < split.length; i++){
-    wordVowels.push(getVowelsFromWord(split[i]));
-  }
+  split.forEach(word => wordVowels.push(wordVowelParser(word)));
 
   return wordVowels;
 }
 
-const vowels = "aeiou"
+const vowels = "aeiou";
 
-function getVowelsFromWord(word: string){
-  const vowels: string[] = [];
-
-
-  return vowels;
+function wordVowelParser(word: string): string[]{
+  const split = word.split("");
+  return split.filter(letter => vowels.includes(letter));
 }
 
+function getClassNamesFromVowels(wordVowels: [string[]]): string[]{
+  let classNames:string[] = [];
 
-
+  return classNames;
+}
