@@ -1,24 +1,32 @@
-import Quote from '../Interfaces/Quote';
+import Quote from "../Interfaces/Quote";
 
+export function wordParser(quote: String) {
+  const split = quote.toLowerCase().split(" ");
+  let vowelsPerWord: Array<string[]> = new Array<string[]>();
 
-function wordParser(quote: String){
-  const split = quote.toLowerCase().split("");
-  const wordVowels: [string[]] = [[]];
-
-  split.forEach(word => wordVowels.push(wordVowelParser(word)));
-
-  return wordVowels;
+  split.forEach((word) => vowelsPerWord.push(getVowelsForWord(word)));
+  console.log(vowelsPerWord);
+  return vowelsPerWord;
 }
 
-const vowels = "aeiou";
+const vowels = "aeiouy";
 
-function wordVowelParser(word: string): string[]{
+export function getVowelsForWord(word: string): string[] {
   const split = word.split("");
-  return split.filter(letter => vowels.includes(letter));
+  return split.filter((letter) => vowels.includes(letter));
 }
 
-function getClassNamesFromVowels(wordVowels: [string[]]): string[]{
-  let classNames:string[] = [];
-
-  return classNames;
+function getClassNamesForWord(vowels: string[]): string[] {
+  return vowels.map((vowel) => `vowel-${vowel}`);
 }
+
+export function getClassNamesWords(wordVowels: string[][]): string[][] {
+  // each wordVowel is an array of vowels
+  // for each subArray, iterate over the vowels and populate an array
+  // that will have the necessary class names for the word
+  // once the class names array for the word is complete
+  // push it into the return array
+  return wordVowels.map((vowelsForWord) => getClassNamesForWord(vowelsForWord));
+}
+
+// input: [a, e, i, o]
