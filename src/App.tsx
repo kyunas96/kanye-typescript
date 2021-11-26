@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Background from './Components/background';
 import Kanye from './Components/kanye/kanye';
 import SpeechBubble from './Components/speechBubble/speachBubble';
@@ -11,9 +11,11 @@ doin while Yeezy speaks`;
 function App() {
   const [quote, setQuote] = useState<string>("I'm gunna save this place");
 
-  const fetchQuote = () => {
-    
-  }
+  useEffect(() => {
+    fetch("https://api.kanye.rest")
+      .then(res => res.json())
+      .then(({quote}) => setQuote(quote))
+  }, [])
 
   return (
     <div className="App">
