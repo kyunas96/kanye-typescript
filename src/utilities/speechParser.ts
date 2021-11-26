@@ -1,5 +1,3 @@
-import Quote from "../Interfaces/Quote";
-
 export function wordParser(quote: String) {
   const split = quote.toLowerCase().split(" ");
   let vowelsPerWord: Array<string[]> = new Array<string[]>();
