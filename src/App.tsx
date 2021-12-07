@@ -9,20 +9,33 @@ const interruptQuote = `Yo I’ll let you finish, but what the hell you
 doin while Yeezy speaks`;
 
 function App() {
-  const [quote, setQuote] = useState<string>("I'm gunna save this place");
+  const [quote, setQuote] = 
+    useState<string[]>("I'm gunna save this place".split(" "));
 
   useEffect(() => {
     fetch("https://api.kanye.rest")
       .then(res => res.json())
-      .then(({quote}) => setQuote(quote))
+      .then(({quote}) => {
+        console.log(quote)
+        setQuote(quote)
+      })
   }, [])
+
+  // create a function that will iterate through the quote and display
+  // it to the 
+
+
+  // for each word, create a setTimeout that will iterate over the sub array
+  // of image file names, when the subArray is exhausted, a new setTimeout will be 
+  // created, adding the next word from the quote to display and returning a 
+  // setTimeout that will iterate over the next sub array of image file names
 
   return (
     <div className="App">
       <Background />
-      <Kanye />
+      <Kanye mouthImageFile={"tongueUp"}/>
       {/* pass quote from state as prop*/}
-      <SpeechBubble quote={quote}/>
+      <SpeechBubble curWord={quote[0]}/>
       {/* pass fetch function to button */}
       <Button />
     </div>

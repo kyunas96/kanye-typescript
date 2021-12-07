@@ -1,0 +1,86 @@
+.mouth {
+  position: absolute;
+}
+
+.aghastNoTeeth {
+  width: 100px;
+  height: 150px;
+  top: 42%;
+  left: 42%;
+}
+
+.bigO {
+  width: 84px;
+  height: 70px;
+  top: 51%;
+  left: 44%;
+}
+
+.clench {
+  top: 38%;
+  left: 38%;
+}
+
+.oTeeth {
+  width: 90px;
+  height: 125px;
+  top: 43.5%;
+  left: 43%;
+}
+
+.smallO {
+  width: 100px;
+  height: 125px;
+  top: 43.5%;
+  left: 42%;
+}
+
+.teethF {
+  width: 100px;
+  height: 200px;
+  top: 33%;
+  left: 42%;
+}
+
+.teethMidOpen {
+  width: 100px;
+  height: 150px;
+  top: 41%;
+  left: 42%;
+}
+
+.teethOpen {
+  width: 100px;
+  height: 150px;
+  top: 41%;
+  left: 42%;
+}
+
+.tongueDown {
+  width: 100px;
+  height: 150px;
+  top: 40%;
+  left: 42%;
+}
+
+.tongueMid {
+  width: 95px;
+  height: 150px;
+  top: 42%;
+  left: 43%;
+  transform: rotate(-8deg);
+}
+
+.tongueUp {
+  width: 125px;
+  height: 200px;
+  top: 34.5%;
+  left: 41%;
+  transform: rotate(-8deg);
+}
+
+
+.mouth img {
+  width: 100%;
+  height: 100%;
+}
