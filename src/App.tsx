@@ -9,17 +9,31 @@ const interruptQuote = `Yo I’ll let you finish, but what the hell you
 doin while Yeezy speaks`;
 
 function App() {
-  const [quote, setQuote] = 
+  const [fullQuote, setFullQuote] =
     useState<string[]>("I'm gunna save this place".split(" "));
+  const [partialQuote, setPartialQuote] = useState<string[]>([]);
 
   useEffect(() => {
-    fetch("https://api.kanye.rest")
-      .then(res => res.json())
-      .then(({quote}) => {
-        console.log(quote)
-        setQuote(quote)
-      })
+    renderQuoteTimer();
   }, [])
+
+
+  // useEffect(() => {
+  //   fetch("https://api.kanye.rest")
+  //     .then(res => res.json())
+  //     .then(({quote}) => {
+  //       console.log(quote)
+  //       setQuote(quote)
+  //     })
+  // }, [])
+
+  function renderQuoteTimer(){
+    setTimeout(updateQuote, 300);
+  }
+
+  function updateQuote(){
+
+  }
 
   // create a function that will iterate through the quote and display
   // it to the 
@@ -33,9 +47,9 @@ function App() {
   return (
     <div className="App">
       <Background />
-      <Kanye mouthImageFile={"tongueUp"}/>
+      <Kanye mouthImageFile={"tongueUp"} />
       {/* pass quote from state as prop*/}
-      <SpeechBubble curWord={quote[0]}/>
+      <SpeechBubble quoteArray={partialQuote} />
       {/* pass fetch function to button */}
       <Button />
     </div>
