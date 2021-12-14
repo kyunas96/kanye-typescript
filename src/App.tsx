@@ -4,6 +4,7 @@ import Kanye from './Components/kanye/kanye';
 import SpeechBubble from './Components/speechBubble/speachBubble';
 import './App.css';
 import Button from './Components/button';
+import { JsxEmit } from 'typescript';
 
 const interruptQuote = `Yo I’ll let you finish, but what the hell you
 doin while Yeezy speaks`;
@@ -12,10 +13,16 @@ function App() {
   const [fullQuote, setFullQuote] =
     useState<string[]>("I'm gunna save this place".split(" "));
   const [partialQuote, setPartialQuote] = useState<string[]>([]);
+  const [curIndex, setCurIndex] = useState<number>(0);
 
   useEffect(() => {
-    renderQuoteTimer();
-  }, [])
+    if(curIndex <= fullQuote.length){
+      setPartialQuote(fullQuote.slice(0, curIndex));
+      setTimeout(function(){
+        setCurIndex(curIndex + 1);
+      }, 500);
+    }
+  }, [curIndex]);
 
 
   // useEffect(() => {
@@ -28,11 +35,18 @@ function App() {
   // }, [])
 
   function renderQuoteTimer(){
-    setTimeout(updateQuote, 300);
+    setTimeout(function(){
+      updateQuote()
+    }.bind, 300);
   }
 
   function updateQuote(){
-
+    setPartialQuote(fullQuote.slice(0, curIndex));
+    setCurIndex(curIndex + 1);
+    console.log(curIndex);
+    if(curIndex < fullQuote.length){
+      setTimeout(updateQuote, 300);
+    }
   }
 
   // create a function that will iterate through the quote and display
