@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect, useEffect } from 'react';
 // import "./mouth.css";
 
 interface MouthProps {
@@ -15,18 +15,23 @@ const Mouth = ({ word, updateIndex }: MouthProps) => {
   // when all the letters of the word have been iterated over, call
   // the updateWord function to get the next word from the parent
 
-  useEffect(function() {
-      const curChar = word[curCharIndex];
-
-  }, [])
+  useLayoutEffect(function () {
+    const curChar = word[curCharIndex];
+    if (curChar) {
+      setTimeout(function () {
+        setClassName(`mouth ${curChar.toUpperCase()}`)
+        setCurCharIndex(curCharIndex + 1);
+      }, 500)
+    }
+  }, [curCharIndex])
 
   // reset the state when a new word is passed down through props
-  useEffect(function(){
+  useEffect(function () {
     setClassName("");
   }, [word])
 
   return (
-    <div className={className}></div>
+    <div className={"mouth J"}></div>
   )
 }
 

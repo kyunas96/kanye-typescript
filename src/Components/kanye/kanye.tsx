@@ -15,7 +15,9 @@ const Kanye = ({ quote }: { quote: string }) => {
 
   // 
   useEffect(function(){
-    setPartialQuote(quote.split(" ").slice(0, curIndex + 1).join(" "))
+    if(curIndex < quote.split(" ").length){
+      setPartialQuote(quote.split(" ").slice(0, curIndex + 1).join(" "))
+    }
   }, [partialQuote, curIndex])
 
   return (
@@ -23,7 +25,7 @@ const Kanye = ({ quote }: { quote: string }) => {
       <img src={KanyeFace} />
       <SpeechBubble quote={partialQuote} />
       <Mouth 
-        word={quote.split(" ")[curIndex]} 
+        word={quote.split(" ")[curIndex]}
         updateIndex={setCurIndex}/>
     </div>
   );
