@@ -3,35 +3,44 @@ import React, { useState, useLayoutEffect, useEffect } from 'react';
 
 interface MouthProps {
   word: string
-  updateIndex: Function
+  curWordIndex: number
+  updateWordIndex: Function
 }
 
-const Mouth = ({ word, updateIndex }: MouthProps) => {
+const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+const Mouth = ({ word, updateWordIndex, curWordIndex }: MouthProps) => {
   const [curCharIndex, setCurCharIndex] = useState<number>(0);
   const [className, setClassName] = useState<string>("");
 
-  // take in the word and deal with setTimeout hear for each char in 
-  // the word
-  // when all the letters of the word have been iterated over, call
-  // the updateWord function to get the next word from the parent
-
-  useLayoutEffect(function () {
-    const curChar = word[curCharIndex];
-    if (curChar) {
-      setTimeout(function () {
-        setClassName(`mouth ${curChar.toUpperCase()}`)
-        setCurCharIndex(curCharIndex + 1);
-      }, 500)
-    }
-  }, [curCharIndex])
-
-  // reset the state when a new word is passed down through props
   useEffect(function () {
+    // reset the state when a new word is passed down through props
     setClassName("");
+    setCurCharIndex(0);
+    // when a new word is passed through props, put all classChanges
+    // into the callback queue
+    if (word) {
+      for (let i = 0; i <= word.length; i++) {
+        let callback = (i === word.length) ?
+          () => { updateWordIndex(curWordIndex + 1) } :
+          () => { setClassName(`mouth ${word[i].toUpperCase()}`)};
+        let timeDelta = (i + 1) * 100;
+
+        setTimeout(function () {
+          callback();
+        }, timeDelta)
+      }
+    }
   }, [word])
 
+  useEffect(() => {}, [className])
+
+  useEffect(function () {
+    console.log("currentClassName: " + className);
+  })
+
   return (
-    <div className={"mouth J"}></div>
+    <div className={className}></div>
   )
 }
 

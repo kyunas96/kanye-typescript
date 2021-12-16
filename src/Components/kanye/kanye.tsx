@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useLayoutEffect} from "react";
 import Mouth from "../mouth/mouth";
 import SpeechBubble from "../speechBubble/speachBubble";
 import KanyeFace from "./kanye.png";
@@ -8,13 +8,8 @@ const Kanye = ({ quote }: { quote: string }) => {
   const [partialQuote, setPartialQuote] = useState<string>(quote);
   const [curIndex, setCurIndex] = useState<number>(0);
 
-  useEffect(function(){
-    console.log("partialQuote: " + partialQuote);
-    console.log("curIndex: " + curIndex);
-  }, [])
-
   // 
-  useEffect(function(){
+  useLayoutEffect(function(){
     if(curIndex < quote.split(" ").length){
       setPartialQuote(quote.split(" ").slice(0, curIndex + 1).join(" "))
     }
@@ -26,7 +21,8 @@ const Kanye = ({ quote }: { quote: string }) => {
       <SpeechBubble quote={partialQuote} />
       <Mouth 
         word={quote.split(" ")[curIndex]}
-        updateIndex={setCurIndex}/>
+        curWordIndex={curIndex}
+        updateWordIndex={setCurIndex}/>
     </div>
   );
 };
