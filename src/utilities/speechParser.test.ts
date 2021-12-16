@@ -15,6 +15,7 @@ it('should return an array of arrays', () => {
 
 it('should return the class names pertaining to the vowels in the word', () => {
   const res = wordParser("this is my sentence");
+  console.log("res: " + res);
   const classNames = getClassNamesWords(res);
-  console.log(classNames);
+  console.log("classNames: " + classNames);
 })

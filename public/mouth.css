@@ -9,11 +9,12 @@
   left: 42%;
 }
 
-.bigO {
+.O {
   width: 84px;
   height: 70px;
   top: 51%;
   left: 44%;
+  background-image: url('/mouths/O.png');
 }
 
 .clench {
@@ -21,39 +22,47 @@
   left: 38%;
 }
 
-.oTeeth {
+.U {
   width: 90px;
   height: 125px;
   top: 43.5%;
   left: 43%;
+  background-image: url('/mouths/U.png');
 }
 
-.smallO {
+.A {
   width: 100px;
   height: 125px;
   top: 43.5%;
   left: 42%;
+  background-image: url('/mouths/A.png');
 }
 
-.teethF {
-  width: 100px;
-  height: 200px;
-  top: 33%;
-  left: 42%;
+.F, .V {
+  width: 125px;
+  height: 175px;
+  top: 36%;
+  left: 38%;
+  background-image: url('/mouths/F-V.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.teethMidOpen {
-  width: 100px;
-  height: 150px;
-  top: 41%;
-  left: 42%;
-}
-
-.teethOpen {
+.C, .D, .G, .K, .N, .R, .S, .Y, .Z {
   width: 100px;
   height: 150px;
   top: 41%;
   left: 42%;
+  background-image: url('mouths/C-D-G-K-N-R-S-Y-Z.png');
+}
+
+.E {
+  width: 100px;
+  height: 150px;
+  top: 41%;
+  left: 42%;
+  background-image: url('/mouths/E.png');
 }
 
 .tongueDown {
@@ -71,12 +80,13 @@
   transform: rotate(-8deg);
 }
 
-.tongueUp {
+.L {
   width: 125px;
   height: 200px;
   top: 34.5%;
   left: 41%;
   transform: rotate(-8deg);
+  background-image: url('/mouths/L.png');
 }
 
 

@@ -3,11 +3,11 @@ import './speechBubble.css';
 import Bubble from './bubble.svg';
 
 
-const SpeechBubble = ({ quoteArray }: { quoteArray: string[] }) => {
+const SpeechBubble = ({ quote }: { quote: string }) => {
   return (
     <div className="speech-bubble">
       <img src={Bubble} alt=""></img>
-      <div>{quoteArray.join(" ")}</div>
+      <div>{quote}</div>
     </div>
   )
 }
