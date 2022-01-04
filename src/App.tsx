@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import Background from './Components/background';
 import Kanye from './Components/kanye/kanye';
 import './App.css';
-import Button from './Components/button';
 
 const interruptQuote = `Yo I’ll let you finish, but what the hell you
 doin while Yeezy speaks`;
@@ -15,7 +14,7 @@ function App() {
     <div className="App">
       <Background />
       <Kanye quote={fullQuote} />
-      <Button />
+      {/* <Button /> */}
     </div>
   );
 }

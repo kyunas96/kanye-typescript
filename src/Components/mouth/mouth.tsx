@@ -1,6 +1,7 @@
-import React, { useState, useLayoutEffect, useEffect } from 'react';
+import React from 'react';
 
 const Mouth = ({ curLetter} : {curLetter: string}) => {
+  console.log("curLetter: " + curLetter)
   const className = `Mouth ${curLetter.toUpperCase()}`;
   console.log("classname: " + className);
   return (
